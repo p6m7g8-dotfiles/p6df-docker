@@ -48,6 +48,13 @@ p6df::modules::docker::external::brew() {
   brew install dockerize
 }
 
+p6df::modules::docker::home::symlink() {
+
+  # Compose is now a Docker Plugin and needs to be symlinked to be found
+  mkdir -p .docker/cli-plugins
+  ln -sfn /usr/local/opt/docker-compose/bin/docker-compose .docker/cli-plugins/docker-compose
+}
+
 ######################################################################
 #<
 #
