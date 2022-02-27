@@ -39,7 +39,6 @@ p6df::modules::docker::external::brew() {
   brew install --cask docker
   brew install --cask docker-toolbox
   brew install docker-compose
-  brew install docker-compose-completion
   brew install docker-credential-helper
   brew install docker-credential-helper-ecr
   brew install docker-gen
