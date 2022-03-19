@@ -7,7 +7,7 @@
 ######################################################################
 p6df::modules::docker::deps() {
   ModuleDeps=(
-    p6m7g8/p6common
+    p6m7g8-dotfiles/p6common
     akarzim/zsh-docker-aliases
     ohmyzsh/ohmyzsh:plugins/docker
     ohmyzsh/ohmyzsh:plugins/docker-compose
