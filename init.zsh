@@ -50,8 +50,8 @@ p6df::modules::docker::external::brew() {
 p6df::modules::docker::home::symlink() {
 
   # Compose is now a Docker Plugin and needs to be symlinked to be found
-  mkdir -p .docker/cli-plugins
-  ln -sfn /usr/local/opt/docker-compose/bin/docker-compose .docker/cli-plugins/docker-compose
+  p6_dir_mk ".docker/cli-plugins"
+  p6_file_symlink "/usr/local/opt/docker-compose/bin/docker-compose" ".docker/cli-plugins/docker-compose"
 }
 
 ######################################################################
