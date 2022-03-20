@@ -37,7 +37,6 @@ p6df::modules::docker::vscodes() {
 p6df::modules::docker::external::brew() {
 
   brew install --cask docker
-  brew install --cask docker-toolbox
   brew install docker-compose
   brew install docker-credential-helper
   brew install docker-credential-helper-ecr
