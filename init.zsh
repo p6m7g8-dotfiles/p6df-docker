@@ -47,6 +47,14 @@ p6df::modules::docker::external::brew() {
   brew install dockerize
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::docker::home::symlink()
+#
+#  Depends:	 p6_dir p6_file
+#>
+######################################################################
 p6df::modules::docker::home::symlink() {
 
   # Compose is now a Docker Plugin and needs to be symlinked to be found
