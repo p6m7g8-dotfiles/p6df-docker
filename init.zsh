@@ -32,6 +32,7 @@ p6df::modules::docker::vscodes() {
 #
 # Function: p6df::modules::docker::external::brew()
 #
+#  Depends:	 p6_dir
 #>
 ######################################################################
 p6df::modules::docker::external::brew() {
@@ -65,8 +66,33 @@ p6df::modules::docker::home::symlink() {
 ######################################################################
 #<
 #
+# Function: p6df::modules::docker::init()
+#
+#>
+######################################################################
+p6df::modules::docker::init() {
+
+  p6df::modules::docker::prompt::init
+}
+
+######################################################################
+#<
+#
+# Function: p6df::modules::docker::prompt::init()
+#
+#>
+######################################################################
+p6df::modules::docker::prompt::init() {
+
+  p6df::core::prompt::line::add "p6df::modules::docker::prompt::line"
+}
+
+######################################################################
+#<
+#
 # Function: p6df::modules::docker::prompt::line()
 #
+#  Depends:	 p6_file
 #>
 ######################################################################
 p6df::modules::docker::prompt::line() {
