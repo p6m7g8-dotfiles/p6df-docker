@@ -7,10 +7,10 @@
 ######################################################################
 p6df::modules::docker::deps() {
   ModuleDeps=(
-    p6m7g8-dotfiles/p6common
-    akarzim/zsh-docker-aliases
+    p6m7g8-dotfiles/p6df-zsh
     ohmyzsh/ohmyzsh:plugins/docker
     ohmyzsh/ohmyzsh:plugins/docker-compose
+    akarzim/zsh-docker-aliases
   )
 }
 
@@ -32,7 +32,6 @@ p6df::modules::docker::vscodes() {
 #
 # Function: p6df::modules::docker::external::brew()
 #
-#  Depends:	 p6_dir
 #>
 ######################################################################
 p6df::modules::docker::external::brew() {
@@ -53,7 +52,6 @@ p6df::modules::docker::external::brew() {
 #
 # Function: p6df::modules::docker::home::symlink()
 #
-#  Depends:	 p6_dir p6_file
 #>
 ######################################################################
 p6df::modules::docker::home::symlink() {
@@ -92,7 +90,6 @@ p6df::modules::docker::prompt::init() {
 #
 # Function: p6df::modules::docker::prompt::line()
 #
-#  Depends:	 p6_file
 #>
 ######################################################################
 p6df::modules::docker::prompt::line() {
@@ -108,7 +105,6 @@ p6df::modules::docker::prompt::line() {
 #  Returns:
 #	str - str
 #
-#  Depends:	 p6_file p6_string
 #  Environment:	 CMD RUN
 #>
 ######################################################################
