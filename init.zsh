@@ -116,7 +116,7 @@ p6_docker_prompt_info() {
     if p6_string_blank "$cmd"; then
       cmd=$(grep '^RUN' Dockerfile | tail -1)
     fi
-    str="docker:   $cmd"
+    str="docker:\t\t  $cmd"
     p6_return_str "$str"
   else
     p6_return_void
