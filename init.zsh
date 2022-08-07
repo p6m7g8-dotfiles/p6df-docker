@@ -25,6 +25,7 @@ p6df::modules::docker::vscodes() {
 
   # docker
   code --install-extension ms-azuretools.vscode-docker
+  code --install-extension ms-vscode-remote.remote-containers
 }
 
 ######################################################################
@@ -52,13 +53,14 @@ p6df::modules::docker::external::brew() {
 #
 # Function: p6df::modules::docker::home::symlink()
 #
+#  Environment:	 HOMEBREW_PREFIX
 #>
 ######################################################################
 p6df::modules::docker::home::symlink() {
 
   # Compose is now a Docker Plugin and needs to be symlinked to be found
   p6_dir_mk ".docker/cli-plugins"
-  p6_file_symlink "/usr/local/opt/docker-compose/bin/docker-compose" ".docker/cli-plugins/docker-compose"
+  p6_file_symlink "$HOMEBREW_PREFIX/opt/docker-compose/bin/docker-compose" ".docker/cli-plugins/docker-compose"
 }
 
 ######################################################################
