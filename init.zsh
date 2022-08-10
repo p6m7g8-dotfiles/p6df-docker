@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 ######################################################################
 #<
 #
@@ -26,6 +27,8 @@ p6df::modules::docker::vscodes() {
   # docker
   code --install-extension ms-azuretools.vscode-docker
   code --install-extension ms-vscode-remote.remote-containers
+
+  p6_return_void
 }
 
 ######################################################################
@@ -46,6 +49,8 @@ p6df::modules::docker::external::brew() {
   brew install docker-slim
   brew install docker-squash
   brew install dockerize
+
+  p6_return_void
 }
 
 ######################################################################
@@ -61,6 +66,8 @@ p6df::modules::docker::home::symlink() {
   # Compose is now a Docker Plugin and needs to be symlinked to be found
   p6_dir_mk ".docker/cli-plugins"
   p6_file_symlink "$HOMEBREW_PREFIX/opt/docker-compose/bin/docker-compose" ".docker/cli-plugins/docker-compose"
+
+  p6_return_void
 }
 
 ######################################################################
@@ -73,6 +80,8 @@ p6df::modules::docker::home::symlink() {
 p6df::modules::docker::init() {
 
   p6df::modules::docker::prompt::init
+
+  p6_return_void
 }
 
 ######################################################################
