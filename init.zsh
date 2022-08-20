@@ -73,45 +73,7 @@ p6df::modules::docker::home::symlink() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::docker::init()
-#
-#>
-######################################################################
-p6df::modules::docker::init() {
-
-  p6df::modules::docker::prompt::init
-
-  p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::docker::prompt::init()
-#
-#>
-######################################################################
-p6df::modules::docker::prompt::init() {
-
-  p6df::core::prompt::line::add "p6df::modules::docker::prompt::line"
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::docker::prompt::line()
-#
-#>
-######################################################################
-p6df::modules::docker::prompt::line() {
-
-  p6_docker_prompt_info
-}
-
-######################################################################
-#<
-#
-# Function: str str = p6_docker_prompt_info()
+# Function: str str = p6df::modules::docker::prompt::line()
 #
 #  Returns:
 #	str - str
@@ -119,7 +81,7 @@ p6df::modules::docker::prompt::line() {
 #  Environment:	 CMD RUN
 #>
 ######################################################################
-p6_docker_prompt_info() {
+p6df::modules::docker::prompt::line() {
 
   local str
   if p6_file_exists "Dockerfile"; then
