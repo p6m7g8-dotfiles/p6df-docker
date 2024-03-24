@@ -40,15 +40,15 @@ p6df::modules::docker::vscodes() {
 ######################################################################
 p6df::modules::docker::external::brew() {
 
-  brew install --cask docker
-  brew install docker-compose
-  brew install docker-credential-helper
-  brew install docker-credential-helper-ecr
-  brew install docker-gen
-  brew install docker-ls
-  brew install docker-slim
-  brew install docker-squash
-  brew install dockerize
+  p6df::modules::homebrew::cli::brew::install --cask docker
+  p6df::modules::homebrew::cli::brew::install docker-compose
+  p6df::modules::homebrew::cli::brew::install docker-credential-helper
+  p6df::modules::homebrew::cli::brew::install docker-credential-helper-ecr
+  p6df::modules::homebrew::cli::brew::install docker-gen
+  p6df::modules::homebrew::cli::brew::install docker-ls
+  p6df::modules::homebrew::cli::brew::install docker-slim
+  p6df::modules::homebrew::cli::brew::install docker-squash
+  p6df::modules::homebrew::cli::brew::install dockerize
 
   p6_return_void
 }
@@ -73,6 +73,26 @@ p6df::modules::docker::home::symlink() {
 ######################################################################
 #<
 #
+# Function: p6df::modules::docker::init(_module, dir)
+#
+#  Args:
+#	_module -
+#	dir -
+#
+#>
+######################################################################
+p6df::modules::docker::init() {
+  local _module="$1"
+  local dir="$2"
+
+  p6_bootstrap "$dir"
+
+  p6_return_void
+}
+
+######################################################################
+#<
+#
 # Function: str str = p6df::modules::docker::prompt::line()
 #
 #  Returns:
@@ -90,32 +110,7 @@ p6df::modules::docker::prompt::line() {
       cmd=$(grep '^RUN' Dockerfile | tail -1)
     fi
     str="docker:\t\t  $cmd"
-    p6_return_str "$str"
-  else
-    p6_return_void
   fi
-}
 
-######################################################################
-#<
-#
-# Function: p6_docker_dbash()
-#
-#>
-######################################################################
-p6_docker_dbash() {
-
-  docker exec -it $(docker ps -aqf "name=$1") bash
-}
-
-######################################################################
-#<
-#
-# Function: p6_docker_dzsh()
-#
-#>
-######################################################################
-p6_docker_dzsh() {
-
-  docker exec -it $(docker ps -aqf "name=$1") zsh
+  p6_return_str "$str"
 }

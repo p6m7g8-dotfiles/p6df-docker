@@ -10,8 +10,7 @@
   - [Summary](#summary)
   - [Contributing](#contributing)
   - [Code of Conduct](#code-of-conduct)
-  - [Changes](#changes)
-    - [Usage](#usage)
+  - [Usage](#usage)
   - [Author](#author)
 
 ### Badges
@@ -34,26 +33,42 @@
 
 - [Code of Conduct](https://github.com/p6m7g8/.github/blob/master/CODE_OF_CONDUCT.md)
 
-## Changes
-
-- [Change Log](CHANGELOG.md)
-
 ## Usage
+
+
+### Aliases
+
+
+### Functions
 
 ### p6df-docker:
 
 #### p6df-docker/init.zsh:
 
-- p6_docker_dbash()
-- p6_docker_dzsh()
 - p6df::modules::docker::deps()
 - p6df::modules::docker::external::brew()
 - p6df::modules::docker::home::symlink()
+- p6df::modules::docker::init(_module, dir)
 - p6df::modules::docker::vscodes()
 - str str = p6df::modules::docker::prompt::line()
 
 
+### p6df-docker/lib:
 
+#### p6df-docker/lib/docker.sh:
+
+- p6_docker_dbash()
+- p6_docker_dzsh()
+
+
+
+## Hier
+```text
+.
+└── docker.sh
+
+1 directory, 1 file
+```
 ## Author
 
 Philip M . Gollucci <pgollucci@p6m7g8.com>
