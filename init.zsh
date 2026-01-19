@@ -98,7 +98,6 @@ p6df::modules::docker::init() {
 #  Returns:
 #	str - str
 #
-#  Environment:	 CMD RUN
 #>
 ######################################################################
 p6df::modules::docker::prompt::mod() {
