@@ -93,7 +93,7 @@ p6df::modules::docker::init() {
 ######################################################################
 #<
 #
-# Function: str str = p6df::modules::docker::prompt::line()
+# Function: str str = p6df::modules::docker::prompt::mod()
 #
 #  Returns:
 #	str - str
@@ -101,7 +101,7 @@ p6df::modules::docker::init() {
 #  Environment:	 CMD RUN
 #>
 ######################################################################
-p6df::modules::docker::prompt::line() {
+p6df::modules::docker::prompt::mod() {
 
   local str
   if p6_file_exists "Dockerfile"; then
