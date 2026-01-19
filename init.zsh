@@ -93,7 +93,7 @@ p6df::modules::docker::init() {
 ######################################################################
 #<
 #
-# Function: str str = p6df::modules::docker::prompt::line()
+# Function: str str = p6df::modules::docker::prompt::mod()
 #
 #  Returns:
 #	str - str
@@ -101,11 +101,11 @@ p6df::modules::docker::init() {
 #  Environment:	 CMD RUN
 #>
 ######################################################################
-p6df::modules::docker::prompt::line() {
+p6df::modules::docker::prompt::mod() {
 
   local str
   if p6_file_exists "Dockerfile"; then
-    local cmd=$(egrep '^CMD|^ENTRYPOINT' Dockerfile | head -1)
+    local cmd=$(grep -E '^CMD|^ENTRYPOINT' Dockerfile | head -1)
     if p6_string_blank "$cmd"; then
       cmd=$(grep '^RUN' Dockerfile | tail -1)
     fi
