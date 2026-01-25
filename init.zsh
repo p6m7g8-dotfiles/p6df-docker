@@ -40,15 +40,15 @@ p6df::modules::docker::vscodes() {
 ######################################################################
 p6df::modules::docker::external::brew() {
 
-  p6df::modules::homebrew::cli::brew::install --cask docker
-  p6df::modules::homebrew::cli::brew::install docker-compose
-  p6df::modules::homebrew::cli::brew::install docker-credential-helper
-  p6df::modules::homebrew::cli::brew::install docker-credential-helper-ecr
-  p6df::modules::homebrew::cli::brew::install docker-gen
-  p6df::modules::homebrew::cli::brew::install docker-ls
-  p6df::modules::homebrew::cli::brew::install docker-slim
-  p6df::modules::homebrew::cli::brew::install docker-squash
-  p6df::modules::homebrew::cli::brew::install dockerize
+  p6df::core::homebrew::cli::brew::install --cask docker
+  p6df::core::homebrew::cli::brew::install docker-compose
+  p6df::core::homebrew::cli::brew::install docker-credential-helper
+  p6df::core::homebrew::cli::brew::install docker-credential-helper-ecr
+  p6df::core::homebrew::cli::brew::install docker-gen
+  p6df::core::homebrew::cli::brew::install docker-ls
+  p6df::core::homebrew::cli::brew::install docker-slim
+  p6df::core::homebrew::cli::brew::install docker-squash
+  p6df::core::homebrew::cli::brew::install dockerize
 
   p6_return_void
 }
