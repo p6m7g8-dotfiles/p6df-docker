@@ -104,9 +104,9 @@ p6df::modules::docker::prompt::mod() {
 
   local str
   if p6_file_exists "Dockerfile"; then
-    local cmd=$(grep -E '^CMD|^ENTRYPOINT' Dockerfile | head -1)
+    local cmd=$(p6_filter_row_select_regex '^CMD|^ENTRYPOINT' < Dockerfile | p6_filter_row_first 1)
     if p6_string_blank "$cmd"; then
-      cmd=$(grep '^RUN' Dockerfile | tail -1)
+      cmd=$(p6_filter_row_select_regex '^RUN' < Dockerfile | p6_filter_row_last 1)
     fi
     str="docker:\t\t  $cmd"
   fi
