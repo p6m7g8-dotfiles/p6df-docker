@@ -25,8 +25,40 @@ p6df::modules::docker::deps() {
 p6df::modules::docker::vscodes() {
 
   # docker
-  code --install-extension ms-azuretools.vscode-docker
-  code --install-extension ms-vscode-remote.remote-containers
+  p6df::modules::vscode::extension::install ms-azuretools.vscode-docker
+  p6df::modules::vscode::extension::install ms-vscode-remote.remote-containers
+
+  p6_return_void
+}
+
+######################################################################
+#<
+#
+# Function: str json = p6df::modules::docker::vscodes::config()
+#
+#  Returns:
+#	str - json
+#
+#>
+######################################################################
+p6df::modules::docker::vscodes::config() {
+
+  cat <<'EOF'
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  }
+EOF
 
   p6_return_void
 }
