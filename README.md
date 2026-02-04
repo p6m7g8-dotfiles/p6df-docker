@@ -39,7 +39,11 @@ TODO: Add a short summary of this module.
 - `p6df::modules::docker::external::brew()`
 - `p6df::modules::docker::home::symlink()`
 - `p6df::modules::docker::init(_module, dir)`
+  - Args:
+    - _module - 
+    - dir - 
 - `p6df::modules::docker::vscodes()`
+- `p6df::modules::docker::vscodes::config()`
 - `str str = p6df::modules::docker::prompt::mod()`
 
 #### p6df-docker/lib
