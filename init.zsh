@@ -42,18 +42,10 @@ p6df::modules::docker::vscodes::config() {
 
   cat <<'EOF'
   "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    "editor.defaultFormatter": "ms-azuretools.vscode-container"
   },
   "[dockercompose]": {
-    "editor.autoIndent": "advanced",
     "editor.defaultFormatter": "redhat.vscode-yaml"
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2,
-    "editor.quickSuggestions": {
-      "other": true,
-      "comments": false,
-      "strings": true
-    }
   }
 EOF
 
