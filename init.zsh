@@ -45,15 +45,15 @@ p6df::modules::docker::vscodes::config() {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
   "[dockercompose]": {
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
-    "editor.autoIndent": "advanced",
     "editor.quickSuggestions": {
       "other": true,
       "comments": false,
       "strings": true
-    },
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    }
   }
 EOF
 
