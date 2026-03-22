@@ -12,6 +12,8 @@ p6df::modules::docker::deps() {
     ohmyzsh/ohmyzsh:plugins/docker
     ohmyzsh/ohmyzsh:plugins/docker-compose
     akarzim/zsh-docker-aliases
+    wrsmith108/claude-code-docker-skill
+    rohitg00/awesome-claude-code-toolkit:plugins/docker-helper
   )
 }
 
