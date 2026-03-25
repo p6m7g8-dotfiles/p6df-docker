@@ -96,6 +96,23 @@ p6df::modules::docker::home::symlink() {
 ######################################################################
 #<
 #
+# Function: p6df::modules::docker::home::symlinks()
+#
+#  Environment:	 HOME P6_DFZ_SRC_DIR
+#>
+######################################################################
+p6df::modules::docker::home::symlinks() {
+
+  p6_file_symlink "$P6_DFZ_SRC_DIR/wrsmith108/claude-code-docker-skill/skills/docker"                                        "$HOME/.claude/skills/docker"
+  p6_file_symlink "$P6_DFZ_SRC_DIR/akin-ozer/cc-devops-skills/devops-skills-plugin/skills/dockerfile-generator"              "$HOME/.claude/skills/dockerfile-generator"
+  p6_file_symlink "$P6_DFZ_SRC_DIR/akin-ozer/cc-devops-skills/devops-skills-plugin/skills/dockerfile-validator"              "$HOME/.claude/skills/dockerfile-validator"
+
+  p6_return_void
+}
+
+######################################################################
+#<
+#
 # Function: p6df::modules::docker::init(_module, dir)
 #
 #  Args:
