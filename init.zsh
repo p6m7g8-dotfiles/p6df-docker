@@ -79,29 +79,16 @@ p6df::modules::docker::external::brews() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::docker::home::symlink()
+# Function: p6df::modules::docker::home::symlinks()
 #
-#  Environment:	 HOMEBREW_PREFIX
+#  Environment:	 HOME HOMEBREW_PREFIX P6_DFZ_SRC_DIR
 #>
 ######################################################################
-p6df::modules::docker::home::symlink() {
+p6df::modules::docker::home::symlinks() {
 
   # Compose is now a Docker Plugin and needs to be symlinked to be found
   p6_dir_mk "$HOME/.docker/cli-plugins"
   p6_file_symlink "$HOMEBREW_PREFIX/opt/docker-compose/bin/docker-compose" "$HOME/.docker/cli-plugins/docker-compose"
-
-  p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: p6df::modules::docker::home::symlinks()
-#
-#  Environment:	 HOME P6_DFZ_SRC_DIR
-#>
-######################################################################
-p6df::modules::docker::home::symlinks() {
 
   p6_file_symlink "$P6_DFZ_SRC_DIR/wrsmith108/claude-code-docker-skill/skills/docker"                                        "$HOME/.claude/skills/docker"
   p6_file_symlink "$P6_DFZ_SRC_DIR/akin-ozer/cc-devops-skills/devops-skills-plugin/skills/dockerfile-generator"              "$HOME/.claude/skills/dockerfile-generator"
