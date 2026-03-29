@@ -1,2 +1,4 @@
-share/.docker/machine/cache/boot2docker.iso
-share/
+share/.docker/cli-plugins/
+share/.docker/devenvironments/
+share/.docker/scan/
+share/.docker/machine/
