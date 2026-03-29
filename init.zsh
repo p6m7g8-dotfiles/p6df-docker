@@ -57,11 +57,11 @@ EOF
 ######################################################################
 #<
 #
-# Function: p6df::modules::docker::external::brew()
+# Function: p6df::modules::docker::external::brews()
 #
 #>
 ######################################################################
-p6df::modules::docker::external::brew() {
+p6df::modules::docker::external::brews() {
 
   p6df::core::homebrew::cli::brew::install --cask docker
   p6df::core::homebrew::cli::brew::install docker-compose
