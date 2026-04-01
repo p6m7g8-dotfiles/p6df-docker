@@ -100,34 +100,14 @@ p6df::modules::docker::home::symlinks() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::docker::init(_module, dir)
-#
-#  Args:
-#	_module -
-#	dir -
-#
-#>
-######################################################################
-p6df::modules::docker::init() {
-  local _module="$1"
-  local dir="$2"
-
-  p6_bootstrap "$dir"
-
-  p6_return_void
-}
-
-######################################################################
-#<
-#
-# Function: str str = p6df::modules::docker::prompt::mod()
+# Function: str str = p6df::modules::docker::prompt::context()
 #
 #  Returns:
 #	str - str
 #
 #>
 ######################################################################
-p6df::modules::docker::prompt::mod() {
+p6df::modules::docker::prompt::context() {
 
   local str
   if p6_file_exists "Dockerfile"; then
@@ -135,7 +115,7 @@ p6df::modules::docker::prompt::mod() {
     if p6_string_blank "$cmd"; then
       cmd=$(p6_filter_row_select_regex '^RUN' < Dockerfile | p6_filter_row_last 1)
     fi
-    str="docker:\t\t  $cmd"
+    str="$(p6_string_space_pad "docker:" 16)$cmd"
   fi
 
   p6_return_str "$str"
