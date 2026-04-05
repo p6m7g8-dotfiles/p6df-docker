@@ -1,5 +1,11 @@
 # shellcheck shell=bash
 ######################################################################
+#<
+#
+# Function: p6df::modules::docker::deps()
+#
+#>
+######################################################################
 p6df::modules::docker::deps() {
   ModuleDeps=(
     p6m7g8-dotfiles/p6df-zsh
@@ -11,6 +17,13 @@ p6df::modules::docker::deps() {
   )
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::docker::home::symlinks()
+#
+#  Environment:	 HOME HOMEBREW_PREFIX P6_DFZ_SRC_DIR
+#>
 ######################################################################
 p6df::modules::docker::home::symlinks() {
 
@@ -25,6 +38,12 @@ p6df::modules::docker::home::symlinks() {
   p6_return_void
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::docker::external::brews()
+#
+#>
 ######################################################################
 p6df::modules::docker::external::brews() {
 
@@ -42,6 +61,12 @@ p6df::modules::docker::external::brews() {
 }
 
 ######################################################################
+#<
+#
+# Function: p6df::modules::docker::vscodes()
+#
+#>
+######################################################################
 p6df::modules::docker::vscodes() {
 
   # docker
@@ -51,6 +76,12 @@ p6df::modules::docker::vscodes() {
   p6_return_void
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::docker::vscodes::config()
+#
+#>
 ######################################################################
 p6df::modules::docker::vscodes::config() {
 
@@ -66,37 +97,6 @@ EOF
   p6_return_void
 }
 
-######################################################################
-#<
-#
-# Function: p6df::modules::docker::deps()
-#
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::docker::vscodes()
-#
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::docker::vscodes::config()
-#
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::docker::external::brews()
-#
-#>
-######################################################################
-#<
-#
-# Function: p6df::modules::docker::home::symlinks()
-#
-#  Environment:	 HOME HOMEBREW_PREFIX P6_DFZ_SRC_DIR
-#>
 ######################################################################
 #<
 #
